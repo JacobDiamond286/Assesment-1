@@ -8,13 +8,23 @@ const reader = readline.createInterface({
 
 console.log(`Welcome to the password validator tool!`)
 reader.question(`Please provide a password to validate: `, function(input){
-    password = input.length
-    symbols = input.includes(`!`,`@`,`#`,`$`)
-   
-    if (password < 10) {
+    let numbers = input.match(/\d+/g);
+    let capitals = input.match(/[A-Z]/);
+    let lowercase = input.match(/[a-z]/);
+    let specialCharacters = input.match(/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/);
+    if (input.length < 10) {
         console.log(`Password is too short! Please make it at least 10 characters long`)
+    } else if (specialCharacters == null) {
+        console.log(`You need at least one symbol. (ex. !, @, #, $)`)
+    } else if (numbers == null) {
+        console.log(`You need at least one number`)
+    } else if (capitals == null) {
+        console.log(`You need at least one capital letter`)
+    } else if (lowercase == null) {
+        console.log(`You need at least one lower case letter`)
     } else {
         console.log(`Sucess! Your password is strong!`)
     }
     reader.close()
 });
+
