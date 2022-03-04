@@ -9,7 +9,8 @@ const reader = readline.createInterface({
 console.log(`Welcome to the password validator tool!`)
 reader.question(`Please provide a password to validate: `, function(input){
     password = input.length
-    
+    symbols = input.includes(`!`,`@`,`#`,`$`)
+   
     if (password < 10) {
         console.log(`Password is too short! Please make it at least 10 characters long`)
     } else {
