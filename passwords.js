@@ -23,7 +23,13 @@ reader.question(`Please provide a password to validate: `, function(input){
     } else if (lowercase == null) {
         console.log(`You need at least one lower case letter`)
     } else {
-        console.log(`Sucess! Your password is strong!`)
+        console.log(':::        :::::::::: ::::::::::: ::::::::        ::::::::   ::::::::  ::: ::: \n' +
+        ':+:        :+:            :+:    :+:    :+:      :+:    :+: :+:    :+: :+: :+: \n' +
+        '+:+        +:+            +:+    +:+             +:+        +:+    +:+ +:+ +:+ \n' +
+        `+#+        +#++:++#       +#+    +#++:++#++      :#:        +#+    +:+ +#+ +#+ \n` +
+        `+#+        +#+            +#+           +#+      +#+   +#+# +#+    +#+ +#+ +#+ \n` +
+        `#+#        #+#            #+#    #+#    #+#      #+#    #+# #+#    #+#         \n` +
+        `########## ##########     ###     ########        ########   ########  ### ### \n`)
     }
     reader.close()
 });
